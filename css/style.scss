@@ -1,0 +1,374 @@
+@import "susy";
+//The banner is from Pure CSS Layouts
+
+$navLinkColor: red;
+$nav-bg-color: #fff;
+$contact-bg-color: #fff;
+$nav-link-hover-color: #efefef;
+$main-bg-color: #ddd;
+$body-width: 60em;
+$main-page-bg-color: #fff;
+$pricing-table-head-bg-color: #ccc;
+$pricing-header-color-one: #519251;
+$pricing-header-color-two: #2c4985;
+
+@import url(http://weloveiconfonts.com/api/?family=fontelico);
+
+/* fontelico */
+[class*="fontelico-"]:before {
+  font-family: 'fontelico', sans-serif;
+}
+
+
+$susy: (
+  container: auto,
+  columns: 12,
+  gutters: 1/2,
+  math: static fluid,
+);
+
+hr {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: $main-bg-color;
+  font-family: 'Roboto Slab', serif;
+  font-size: .9em;
+}
+
+.navigation {
+  background: $nav-bg-color;
+}
+
+nav {
+  @include container($body-width);
+}
+
+.access-health-text{
+  float: left;
+  padding: .5em 1em .5em 0;
+  text-decoration: none;
+  display: inline-block;
+}
+.access-health-text:hover{
+  background: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li{
+  display: inline;
+}
+nav ul li a{
+  float: left;
+  padding: .5em;
+  text-decoration: none;
+  display: inline-block;
+}
+nav ul li a:hover{
+  background: $nav-link-hover-color;
+}
+
+.banner {
+  background: transparent url('http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg') 0 0 no-repeat fixed;
+  text-align: center;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg', sizingMethod='scale');
+  height: 20em;
+  width: 100%;
+  display: table;
+}
+
+.banner-head {
+  display: table-cell;
+  vertical-align: middle;
+  color: white;
+  text-shadow: 0 2px 2px black;
+}
+
+//###################### Pricing Page ################################
+
+.banner-price-simple {
+  background: transparent url('https://s3.amazonaws.com/ooomf-com-files/dHPUrXnHQeqfeuXCscUj_NZ14%20(391%20of%20589).jpg') 0 0 no-repeat fixed;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://s3.amazonaws.com/ooomf-com-files/dHPUrXnHQeqfeuXCscUj_NZ14%20(391%20of%20589).jpg', sizingMethod='scale');
+  height: 7em;
+}
+
+.banner-price-complete {
+  background: transparent url('https://s3.amazonaws.com/ooomf-com-files/6YrsyY9SqyuX0eAJaZGQ_pixel-debris-01.jpg') 0 0 no-repeat fixed;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://s3.amazonaws.com/ooomf-com-files/6YrsyY9SqyuX0eAJaZGQ_pixel-debris-01.jpg', sizingMethod='scale');
+  height: 7em;
+}
+
+
+//###################### Contact Maps ################################
+
+.contact-maps{
+  //display: inline;
+}
+#map-canvas{
+  @include span(12);
+  height: 20em;
+  margin-bottom: 3em;
+}
+
+.contact-maps p,
+.contact-maps h5{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.google-map {
+    height: 20em;
+    overflow: hidden;
+}
+
+.google-map iframe,   
+.google-map object,  
+.google-map embed {
+    width: 100%;
+    height: 100%;
+}
+
+.google-map-left,
+.google-map-right{
+  background: white;
+}
+
+.google-map-left {
+  @include span(6);
+}
+.google-map-right {
+  @include span(6 at 7);
+}
+
+//###################### Contact Form ################################
+
+.form{
+  margin: 2em 0 2em 0;
+}
+
+.form-data{
+  @include container($body-width);
+}
+
+.form-element{
+  height: 4em;
+}
+
+.form .form-data form {
+}
+
+.form .form-data fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form .form-data label {
+  padding: 0;
+  margin: 0;
+}
+
+.left-form {
+  @include span(6);
+}
+
+.right-form {
+  @include span(6 at 7);
+}
+
+.form label {
+  display: inline-block;
+  @include span(2);
+}
+
+.form input {
+  @include span(12);
+  padding: .5em 0 .5em 0;
+}
+
+.form-textarea textarea {
+  @include span(12);
+  height: 12em;
+  margin-bottom: 1em;
+}
+.form-textarea button {
+  @include span(3 at 10);
+}
+
+//###################### Contact Info ################################
+
+.contact{
+  background: $contact-bg-color;
+  padding: 0 0 3em 0;
+}
+
+.contact-width {
+  @include container($body-width);
+}
+
+.contact-info{
+}
+.location{
+  @include span(6);
+}
+.location-last{
+  @include span(6 at 7);
+}
+
+//###################### Main Page Info ################################
+
+.about-pricing-left{
+  @include span(4);
+}
+
+.about-pricing-right{
+  @include span(4 at 9);
+}
+
+.service-element{
+  @include span(12);
+}
+
+.pricing{
+  background: $main-page-bg-color;
+  padding: 3em 0 3em 0;
+}
+
+.pricing-info{
+  @include container($body-width);
+}
+
+.pricing-tables-left{
+  @include span(8);
+}
+.pricing-tables-right{
+  @include span(8 at 5);
+}
+
+.pricing-table-left {
+  @include span(6);
+}
+
+.pricing-table-right {
+  @include span(6 at 7);
+}
+
+.pricing-table-header {
+  color: white;
+  text-align: center;
+  padding: 1em 0 1em 0;
+}
+
+.pricing-header-color-one {
+  background: $pricing-header-color-one;
+}
+.pricing-header-color-two {
+  background: $pricing-header-color-two;
+}
+
+.pricing-table-header h3 {
+  margin: 0;
+  padding-top: 0em;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.pricing-table-price {
+  font-size: 2em;
+  font-weight: 100;
+}
+.pricing-table-price span {
+  text-transform: uppercase;
+  font-size: 0.2em;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  *color: #fff;
+}
+
+.pricing-table-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.pricing-table-list li {
+  padding: 0.8em 0;
+  background: #f7f7f7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.button-choose {
+  @include span(12);
+  padding: .8em;
+}
+
+//###################### who ################################
+.who {
+  background: $main-page-bg-color;
+  padding: 3em 0 3em 0;
+}
+.who-width {
+  @include container($body-width);
+}
+.bio {
+  @include span(3);
+}
+.bio-last {
+  @include span(3 at 10);
+}
+.group-photo{
+  @include span(12);
+}
+.group-photo-img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+.round img{
+  width: 400px;
+}
+
+.round {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  -moz-border-radius: 300px;
+  border-radius: 300px;
+  -webkit-border-radius: 300px;
+  margin: 1.2em;
+}
+
+//###################### Footer #################################
+
+.footer {
+  margin: 2em 0 2em 0;
+  @include container($body-width);
+}
+
+.footer-location {
+  @include span(3);
+  font-size: .6em;
+}
+
+.footer-location-last {
+  @include span(3 at 10);
+  font-size: .6em;
+}
+.footer-location-last h6, .footer-location h6 {
+  margin-bottom: .5em;
+}
+
+
+
+
