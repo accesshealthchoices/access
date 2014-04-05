@@ -553,3 +553,22 @@ p.maps-para {
   color: #00748e;
   text-decoration: none;
 }
+
+/* line 418, /Users/jeremy/Desktop/access/css/style.scss */
+.footer-foot {
+  width: 48.57143%;
+  float: right;
+}
+
+/* line 422, /Users/jeremy/Desktop/access/css/style.scss */
+.footer-links a:link,
+.footer-links a:visited,
+.footer-links a:hover,
+.footer-links a:active {
+  color: #555;
+}
+
+/* line 429, /Users/jeremy/Desktop/access/css/style.scss */
+.footer-links {
+  font-size: .8em;
+}

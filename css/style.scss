@@ -415,6 +415,21 @@ p.maps-para{
   text-decoration: none;
 }
 
+.footer-foot {
+  @include span(6 at 7);
+}
+
+.footer-links a:link,
+.footer-links a:visited,
+.footer-links a:hover,
+.footer-links a:active {
+  color: #555;
+}
+
+.footer-links {
+  font-size: .8em;
+}
+
 
 
 
