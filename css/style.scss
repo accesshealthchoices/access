@@ -89,10 +89,10 @@ nav ul li a:hover{
 }
 
 .banner {
-  background: transparent url('http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg') 0 0 no-repeat fixed;
+  background: transparent url('../img/spokane.jpg') 0 0 no-repeat fixed;
   text-align: center;
   background-size: cover;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg', sizingMethod='scale');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/spokane.jpg', sizingMethod='scale');
   height: 20em;
   width: 100%;
   display: table;
@@ -108,14 +108,14 @@ nav ul li a:hover{
 //###################### Pricing Page ################################
 
 .banner-price-simple {
-  background: transparent url('https://s3.amazonaws.com/ooomf-com-files/dHPUrXnHQeqfeuXCscUj_NZ14%20(391%20of%20589).jpg') 0 0 no-repeat fixed;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://s3.amazonaws.com/ooomf-com-files/dHPUrXnHQeqfeuXCscUj_NZ14%20(391%20of%20589).jpg', sizingMethod='scale');
+  background: transparent url('../img/spokane.jpg') 0 0 no-repeat fixed;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/spokane.jpg', sizingMethod='scale');
   height: 7em;
 }
 
 .banner-price-complete {
-  background: transparent url('https://s3.amazonaws.com/ooomf-com-files/6YrsyY9SqyuX0eAJaZGQ_pixel-debris-01.jpg') 0 0 no-repeat fixed;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://s3.amazonaws.com/ooomf-com-files/6YrsyY9SqyuX0eAJaZGQ_pixel-debris-01.jpg', sizingMethod='scale');
+  background: transparent url('../img/spokane.jpg') 0 0 no-repeat fixed;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/spokane.jpg', sizingMethod='scale');
   height: 7em;
 }
 
@@ -345,28 +345,12 @@ p.maps-para{
 .bio-last {
   @include span(3 at 10);
 }
-.group-photo{
-  @include span(12);
-}
 .group-photo-img{
   margin-left: auto;
   margin-right: auto;
-  width: 300px;
-}
-.round img{
-  width: 400px;
-}
-
-.round {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  width: 300px;
-  height: 300px;
-  -moz-border-radius: 300px;
-  border-radius: 300px;
-  -webkit-border-radius: 300px;
-  margin: 1.2em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 314px;
 }
 
 //###################### Footer #################################
