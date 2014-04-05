@@ -1,13 +1,7 @@
 <div class="form">
 	<div class="form-data">
-		<div class="left-form">
-			<h3><span class="fontelico-emo-thumbsup"></span> Thank you</h3>
-			<p>Both of our plans were carefully crafted to give our clients a tailored experience. Each plan offers a path to full body health.</p>
-			<p>Send us an e-mail, call, or come to one of our locations to find out more about our exceptional services.</p>
-		</div>
-
-		<form action="http://getsimpleform.com/messages?form_api_token=8878bbed8aaa422871a3a0b3c29feafd" method="post" class="right-form">
-			<fieldset>
+		<form action="http://getsimpleform.com/messages?form_api_token=8878bbed8aaa422871a3a0b3c29feafd" method="post">
+			<fieldset class="left-form">
 				<h4>Your Details</h4>
 				<input type='hidden' name='redirect_to' value='{{ site.baseurl }}/' />
 				<div class="form-element">
@@ -22,8 +16,12 @@
 				<div class="form-element">
 					<input id="phone" type="phone" name="Phone" placeholder="(000) 000 0000">
 				</div>
+			</fieldset>
 
+			<fieldset class="right-form">
+				<h4>How can we help?</h4>
 				<div class="form-textarea">
+					<textarea id="email" type="text" name="UserText" ></textarea>
 					<button type="submit" class="button-choose">Submit</button>
 				</div>
 			</fieldset>

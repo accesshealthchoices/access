@@ -453,7 +453,65 @@ p.maps-para {
   width: 314px;
 }
 
-/* line 358, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 357, /Users/jeremy/Desktop/access/css/style.scss */
+.what {
+  background: white;
+  padding: 3em 0 3em 0;
+}
+
+/* line 361, /Users/jeremy/Desktop/access/css/style.scss */
+.what-width {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, /Users/jeremy/.rvm/gems/ruby-2.1.1/gems/susy-2.1.1/sass/susy/output/support/_clearfix.scss */
+.what-width::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 365, /Users/jeremy/Desktop/access/css/style.scss */
+.mission {
+  width: 31.42857%;
+  float: left;
+  margin-right: 2.85714%;
+}
+
+/* line 368, /Users/jeremy/Desktop/access/css/style.scss */
+.services {
+  width: 65.71429%;
+  float: right;
+}
+
+/* line 371, /Users/jeremy/Desktop/access/css/style.scss */
+.what-photo {
+  width: 31.42857%;
+  float: left;
+  margin-right: 2.85714%;
+}
+
+/* line 374, /Users/jeremy/Desktop/access/css/style.scss */
+.what-photo-img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 200px;
+}
+
+/* line 382, /Users/jeremy/Desktop/access/css/style.scss */
+.what-photo-img img {
+  width: 200px;
+}
+
+/* line 386, /Users/jeremy/Desktop/access/css/style.scss */
+.service h6 {
+  margin-bottom: .5em;
+}
+
+/* line 392, /Users/jeremy/Desktop/access/css/style.scss */
 .footer {
   margin: 2em 0 2em 0;
   max-width: 60em;
@@ -467,7 +525,7 @@ p.maps-para {
   clear: both;
 }
 
-/* line 363, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 397, /Users/jeremy/Desktop/access/css/style.scss */
 .footer-location {
   width: 22.85714%;
   float: left;
@@ -475,14 +533,23 @@ p.maps-para {
   font-size: .6em;
 }
 
-/* line 368, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 402, /Users/jeremy/Desktop/access/css/style.scss */
 .footer-location-last {
   width: 22.85714%;
   float: right;
   font-size: .6em;
 }
 
-/* line 372, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 406, /Users/jeremy/Desktop/access/css/style.scss */
 .footer-location-last h6, .footer-location h6 {
   margin-bottom: .5em;
+}
+
+/* line 410, /Users/jeremy/Desktop/access/css/style.scss */
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+  color: #00748e;
+  text-decoration: none;
 }

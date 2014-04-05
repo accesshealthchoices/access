@@ -353,6 +353,40 @@ p.maps-para{
   width: 314px;
 }
 
+//###################### what ################################
+.what {
+  background: $main-page-bg-color;
+  padding: 3em 0 3em 0;
+}
+.what-width {
+  @include container($body-width);
+}
+
+.mission{
+  @include span(4);
+}
+.services {
+  @include span(8 at 5);
+}
+.what-photo{
+  @include span(4);
+}
+.what-photo-img{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 200px;
+}
+
+.what-photo-img img {
+  width: 200px;
+}
+
+.service h6 {
+  margin-bottom: .5em;
+}
+
 //###################### Footer #################################
 
 .footer {
@@ -371,6 +405,14 @@ p.maps-para{
 }
 .footer-location-last h6, .footer-location h6 {
   margin-bottom: .5em;
+}
+
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:active {
+  color: $pricing-header-color-one;
+  text-decoration: none;
 }
 
 
