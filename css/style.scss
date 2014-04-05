@@ -1,7 +1,6 @@
 @import "susy";
 //The banner is from Pure CSS Layouts
 
-$navLinkColor: red;
 $nav-bg-color: #fff;
 $contact-bg-color: #fff;
 $nav-link-hover-color: #efefef;
@@ -9,8 +8,9 @@ $main-bg-color: #ddd;
 $body-width: 60em;
 $main-page-bg-color: #fff;
 $pricing-table-head-bg-color: #ccc;
-$pricing-header-color-one: #519251;
-$pricing-header-color-two: #2c4985;
+$pricing-header-color-one: #00748e;
+$pricing-header-color-two: #e3753c;
+$main-link-color: $pricing-header-color-two;
 
 @import url(http://weloveiconfonts.com/api/?family=fontelico);
 
@@ -18,6 +18,8 @@ $pricing-header-color-two: #2c4985;
 [class*="fontelico-"]:before {
   font-family: 'fontelico', sans-serif;
 }
+
+
 
 
 $susy: (
@@ -36,6 +38,17 @@ body {
   background: $main-bg-color;
   font-family: 'Roboto Slab', serif;
   font-size: .9em;
+}
+
+nav a:link,
+nav a:hover,
+nav a:visited,
+nav a:active {
+  color: $main-link-color;
+}
+.maps-link{
+  color: $main-link-color;
+  text-decoration: none;
 }
 
 .navigation {
@@ -148,6 +161,14 @@ nav ul li a:hover{
   @include span(6 at 7);
 }
 
+.maps-header{
+  margin-bottom: .5em;
+}
+p.maps-para{
+  padding-left: 0;
+  margin-left: 0;
+}
+
 //###################### Contact Form ################################
 
 .form{
@@ -171,11 +192,6 @@ nav ul li a:hover{
   margin: 0;
 }
 
-.form .form-data label {
-  padding: 0;
-  margin: 0;
-}
-
 .left-form {
   @include span(6);
 }
@@ -184,20 +200,17 @@ nav ul li a:hover{
   @include span(6 at 7);
 }
 
-.form label {
-  display: inline-block;
-  @include span(2);
-}
-
 .form input {
   @include span(12);
   padding: .5em 0 .5em 0;
+  border: 1px solid #ccc;
 }
 
 .form-textarea textarea {
   @include span(12);
   height: 12em;
   margin-bottom: 1em;
+  border: 1px solid #ccc;
 }
 .form-textarea button {
   @include span(3 at 10);
@@ -309,6 +322,13 @@ nav ul li a:hover{
 .button-choose {
   @include span(12);
   padding: .8em;
+  background: $nav-link-hover-color;
+  border: 1px solid #ccc;
+  color: #222;
+}
+
+.button-choose:hover {
+  background: #dedede;
 }
 
 //###################### who ################################

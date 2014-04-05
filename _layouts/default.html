@@ -14,15 +14,15 @@
 	<script type="text/javascript">
 		var valleyMassageLocation = new google.maps.LatLng(47.664999, -117.240710);
 		var secondLocation = new google.maps.LatLng(47.659774, -117.422206);
-		var centerLocation = new google.maps.LatLng(47.687700, -117.346094);
+		var centerLocation = new google.maps.LatLng(47.664723, -117.336796);
 		var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
 		function initialize() {
 			var styles = [
 				{
 					stylers: [
-						{ hue: "#2c4985" },
-						{ saturation: -20 }
+						{ hue: "#00748e" },
+						{ saturation: -40 }
 					]
 				},{
 					featureType: "road",
@@ -55,20 +55,44 @@
 			};
 			var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-			var image = new google.maps.MarkerImage("http://www.creare.co.uk/wp-content/uploads/2013/08/marker.png", null, null, null, new google.maps.Size(40,52)); // Create a variable for our marker image.
+			var image = new google.maps.MarkerImage("{{ site.baseurl }}/img/marker.png", null, null, null, new google.maps.Size(64,64)); // Create a variable for our marker image.
 
 			var marker = new google.maps.Marker({ // Set the marker
 			    position: valleyMassageLocation, // Position marker to coordinates
 			    icon: image,
 			    map: map, // assign the market to our map variable
 			});
-			var marker = new google.maps.Marker({ // Set the marker
+			var marker2 = new google.maps.Marker({ // Set the marker
 			    position: secondLocation, // Position marker to coordinates
 			    icon: image,
 			    map: map, // assign the market to our map variable
 			});
 			map.mapTypes.set('map_style', styledMap);
   			map.setMapTypeId('map_style');
+
+  			var infowindow = new google.maps.InfoWindow({ // Create a new InfoWindow
+	  			content:'' +
+	  				'<h6 class="maps-header">Valley Location</h6>' +
+	  				'<p class="maps-para">12121 E Broadway Spokane, Wa 99206<br>' +
+	  				'(509) 921-9800<br>' +
+	  				'<a href="https://www.google.com/maps/place/12121+E+Broadway+Ave/@47.664786,-117.240785,17z/data=!3m1!4b1!4m2!3m1!1s0x549e2013454ad5d1:0x2f25b32122906c67" class="maps-link">Get Directions</a></p>'
+	  		});
+
+	  		var infowindow2 = new google.maps.InfoWindow({ // Create a new InfoWindow
+	  			content:'' +
+	  				'<h6 class="maps-header">Division Location</h6>' +
+	  				'<p class="maps-para">12121 E Broadway Spokane, Wa 99206<br>' +
+	  				'(509) 921-9800<br>' +
+	  				'<a href="https://www.google.com/maps/place/12121+E+Broadway+Ave/@47.664786,-117.240785,17z/data=!3m1!4b1!4m2!3m1!1s0x549e2013454ad5d1:0x2f25b32122906c67" class="maps-link">Get Directions</a></p>'
+	  		});
+
+	  		google.maps.event.addListener(marker, 'click', function() { // Add a Click Listener to our marker
+	  			infowindow.open(map,marker); // Open our InfoWindow
+	  		});
+
+	  		google.maps.event.addListener(marker2, 'click', function() { // Add a Click Listener to our marker
+	  			infowindow2.open(map,marker2); // Open our InfoWindow
+	  		});
 
 		}
 

@@ -5,25 +5,39 @@
   font-family: 'fontelico', sans-serif;
 }
 
-/* line 30, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 32, /Users/jeremy/Desktop/access/css/style.scss */
 hr {
   margin: 0px;
   padding: 0px;
 }
 
-/* line 35, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 37, /Users/jeremy/Desktop/access/css/style.scss */
 body {
   background: #dddddd;
   font-family: 'Roboto Slab', serif;
   font-size: .9em;
 }
 
-/* line 41, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 43, /Users/jeremy/Desktop/access/css/style.scss */
+nav a:link,
+nav a:hover,
+nav a:visited,
+nav a:active {
+  color: #e3753c;
+}
+
+/* line 49, /Users/jeremy/Desktop/access/css/style.scss */
+.maps-link {
+  color: #e3753c;
+  text-decoration: none;
+}
+
+/* line 54, /Users/jeremy/Desktop/access/css/style.scss */
 .navigation {
   background: white;
 }
 
-/* line 45, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 58, /Users/jeremy/Desktop/access/css/style.scss */
 nav {
   max-width: 60em;
   margin-left: auto;
@@ -36,7 +50,7 @@ nav::after {
   clear: both;
 }
 
-/* line 49, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 62, /Users/jeremy/Desktop/access/css/style.scss */
 .access-health-text {
   float: left;
   padding: .5em 1em .5em 0;
@@ -44,24 +58,24 @@ nav::after {
   display: inline-block;
 }
 
-/* line 55, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 68, /Users/jeremy/Desktop/access/css/style.scss */
 .access-health-text:hover {
   background: none;
 }
 
-/* line 59, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 72, /Users/jeremy/Desktop/access/css/style.scss */
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 65, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 78, /Users/jeremy/Desktop/access/css/style.scss */
 nav ul li {
   display: inline;
 }
 
-/* line 68, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 81, /Users/jeremy/Desktop/access/css/style.scss */
 nav ul li a {
   float: left;
   padding: .5em;
@@ -69,12 +83,12 @@ nav ul li a {
   display: inline-block;
 }
 
-/* line 74, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 87, /Users/jeremy/Desktop/access/css/style.scss */
 nav ul li a:hover {
   background: #efefef;
 }
 
-/* line 78, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 91, /Users/jeremy/Desktop/access/css/style.scss */
 .banner {
   background: transparent url("http://24.media.tumblr.com/ccb268832580ac12951828a1c179de69/tumblr_mo2xbk8JUK1st5lhmo1_1280.jpg") 0 0 no-repeat fixed;
   text-align: center;
@@ -85,7 +99,7 @@ nav ul li a:hover {
   display: table;
 }
 
-/* line 88, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 101, /Users/jeremy/Desktop/access/css/style.scss */
 .banner-head {
   display: table-cell;
   vertical-align: middle;
@@ -93,21 +107,21 @@ nav ul li a:hover {
   text-shadow: 0 2px 2px black;
 }
 
-/* line 97, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 110, /Users/jeremy/Desktop/access/css/style.scss */
 .banner-price-simple {
   background: transparent url("https://s3.amazonaws.com/ooomf-com-files/dHPUrXnHQeqfeuXCscUj_NZ14%20(391%20of%20589).jpg") 0 0 no-repeat fixed;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://s3.amazonaws.com/ooomf-com-files/dHPUrXnHQeqfeuXCscUj_NZ14%20(391%20of%20589).jpg', sizingMethod='scale');
   height: 7em;
 }
 
-/* line 103, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 116, /Users/jeremy/Desktop/access/css/style.scss */
 .banner-price-complete {
   background: transparent url("https://s3.amazonaws.com/ooomf-com-files/6YrsyY9SqyuX0eAJaZGQ_pixel-debris-01.jpg") 0 0 no-repeat fixed;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://s3.amazonaws.com/ooomf-com-files/6YrsyY9SqyuX0eAJaZGQ_pixel-debris-01.jpg', sizingMethod='scale');
   height: 7em;
 }
 
-/* line 115, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 128, /Users/jeremy/Desktop/access/css/style.scss */
 #map-canvas {
   width: 100%;
   float: left;
@@ -115,20 +129,20 @@ nav ul li a:hover {
   margin-bottom: 3em;
 }
 
-/* line 121, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 134, /Users/jeremy/Desktop/access/css/style.scss */
 .contact-maps p,
 .contact-maps h5 {
   padding-left: 1em;
   padding-right: 1em;
 }
 
-/* line 127, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 140, /Users/jeremy/Desktop/access/css/style.scss */
 .google-map {
   height: 20em;
   overflow: hidden;
 }
 
-/* line 132, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 145, /Users/jeremy/Desktop/access/css/style.scss */
 .google-map iframe,
 .google-map object,
 .google-map embed {
@@ -136,31 +150,42 @@ nav ul li a:hover {
   height: 100%;
 }
 
-/* line 139, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 152, /Users/jeremy/Desktop/access/css/style.scss */
 .google-map-left,
 .google-map-right {
   background: white;
 }
 
-/* line 144, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 157, /Users/jeremy/Desktop/access/css/style.scss */
 .google-map-left {
   width: 48.57143%;
   float: left;
   margin-right: 2.85714%;
 }
 
-/* line 147, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 160, /Users/jeremy/Desktop/access/css/style.scss */
 .google-map-right {
   width: 48.57143%;
   float: right;
 }
 
-/* line 153, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 164, /Users/jeremy/Desktop/access/css/style.scss */
+.maps-header {
+  margin-bottom: .5em;
+}
+
+/* line 167, /Users/jeremy/Desktop/access/css/style.scss */
+p.maps-para {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* line 174, /Users/jeremy/Desktop/access/css/style.scss */
 .form {
   margin: 2em 0 2em 0;
 }
 
-/* line 157, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 178, /Users/jeremy/Desktop/access/css/style.scss */
 .form-data {
   max-width: 60em;
   margin-left: auto;
@@ -173,73 +198,61 @@ nav ul li a:hover {
   clear: both;
 }
 
-/* line 161, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 182, /Users/jeremy/Desktop/access/css/style.scss */
 .form-element {
   height: 4em;
 }
 
-/* line 168, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 189, /Users/jeremy/Desktop/access/css/style.scss */
 .form .form-data fieldset {
   border: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 174, /Users/jeremy/Desktop/access/css/style.scss */
-.form .form-data label {
-  padding: 0;
-  margin: 0;
-}
-
-/* line 179, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 195, /Users/jeremy/Desktop/access/css/style.scss */
 .left-form {
   width: 48.57143%;
   float: left;
   margin-right: 2.85714%;
 }
 
-/* line 183, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 199, /Users/jeremy/Desktop/access/css/style.scss */
 .right-form {
   width: 48.57143%;
   float: right;
 }
 
-/* line 187, /Users/jeremy/Desktop/access/css/style.scss */
-.form label {
-  display: inline-block;
-  width: 14.28571%;
-  float: left;
-  margin-right: 2.85714%;
-}
-
-/* line 192, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 203, /Users/jeremy/Desktop/access/css/style.scss */
 .form input {
   width: 100%;
   float: left;
   padding: .5em 0 .5em 0;
+  border: 1px solid #ccc;
 }
 
-/* line 197, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 209, /Users/jeremy/Desktop/access/css/style.scss */
 .form-textarea textarea {
   width: 100%;
   float: left;
   height: 12em;
   margin-bottom: 1em;
+  border: 1px solid #ccc;
 }
 
-/* line 202, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 215, /Users/jeremy/Desktop/access/css/style.scss */
 .form-textarea button {
   width: 22.85714%;
   float: right;
 }
 
-/* line 208, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 221, /Users/jeremy/Desktop/access/css/style.scss */
 .contact {
   background: white;
   padding: 0 0 3em 0;
 }
 
-/* line 213, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 226, /Users/jeremy/Desktop/access/css/style.scss */
 .contact-width {
   max-width: 60em;
   margin-left: auto;
@@ -252,45 +265,45 @@ nav ul li a:hover {
   clear: both;
 }
 
-/* line 219, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 232, /Users/jeremy/Desktop/access/css/style.scss */
 .location {
   width: 48.57143%;
   float: left;
   margin-right: 2.85714%;
 }
 
-/* line 222, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 235, /Users/jeremy/Desktop/access/css/style.scss */
 .location-last {
   width: 48.57143%;
   float: right;
 }
 
-/* line 228, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 241, /Users/jeremy/Desktop/access/css/style.scss */
 .about-pricing-left {
   width: 31.42857%;
   float: left;
   margin-right: 2.85714%;
 }
 
-/* line 232, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 245, /Users/jeremy/Desktop/access/css/style.scss */
 .about-pricing-right {
   width: 31.42857%;
   float: right;
 }
 
-/* line 236, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 249, /Users/jeremy/Desktop/access/css/style.scss */
 .service-element {
   width: 100%;
   float: left;
 }
 
-/* line 240, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 253, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing {
   background: white;
   padding: 3em 0 3em 0;
 }
 
-/* line 245, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 258, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-info {
   max-width: 60em;
   margin-left: auto;
@@ -303,50 +316,50 @@ nav ul li a:hover {
   clear: both;
 }
 
-/* line 249, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 262, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-tables-left {
   width: 65.71429%;
   float: left;
   margin-right: 2.85714%;
 }
 
-/* line 252, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 265, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-tables-right {
   width: 65.71429%;
   float: right;
 }
 
-/* line 256, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 269, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-table-left {
   width: 48.57143%;
   float: left;
   margin-right: 2.85714%;
 }
 
-/* line 260, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 273, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-table-right {
   width: 48.57143%;
   float: right;
 }
 
-/* line 264, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 277, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-table-header {
   color: white;
   text-align: center;
   padding: 1em 0 1em 0;
 }
 
-/* line 270, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 283, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-header-color-one {
-  background: #519251;
+  background: #00748e;
 }
 
-/* line 273, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 286, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-header-color-two {
-  background: #2c4985;
+  background: #e3753c;
 }
 
-/* line 277, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 290, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-table-header h3 {
   margin: 0;
   padding-top: 0em;
@@ -354,13 +367,13 @@ nav ul li a:hover {
   font-weight: normal;
 }
 
-/* line 284, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 297, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-table-price {
   font-size: 2em;
   font-weight: 100;
 }
 
-/* line 288, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 301, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-table-price span {
   text-transform: uppercase;
   font-size: 0.2em;
@@ -369,7 +382,7 @@ nav ul li a:hover {
   *color: #fff;
 }
 
-/* line 296, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 309, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-table-list {
   list-style-type: none;
   margin: 0;
@@ -377,27 +390,35 @@ nav ul li a:hover {
   text-align: center;
 }
 
-/* line 303, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 316, /Users/jeremy/Desktop/access/css/style.scss */
 .pricing-table-list li {
   padding: 0.8em 0;
   background: #f7f7f7;
   border-bottom: 1px solid #e7e7e7;
 }
 
-/* line 309, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 322, /Users/jeremy/Desktop/access/css/style.scss */
 .button-choose {
   width: 100%;
   float: left;
   padding: .8em;
+  background: #efefef;
+  border: 1px solid #ccc;
+  color: #222;
 }
 
-/* line 315, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 330, /Users/jeremy/Desktop/access/css/style.scss */
+.button-choose:hover {
+  background: #dedede;
+}
+
+/* line 335, /Users/jeremy/Desktop/access/css/style.scss */
 .who {
   background: white;
   padding: 3em 0 3em 0;
 }
 
-/* line 319, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 339, /Users/jeremy/Desktop/access/css/style.scss */
 .who-width {
   max-width: 60em;
   margin-left: auto;
@@ -410,38 +431,38 @@ nav ul li a:hover {
   clear: both;
 }
 
-/* line 322, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 342, /Users/jeremy/Desktop/access/css/style.scss */
 .bio {
   width: 22.85714%;
   float: left;
   margin-right: 2.85714%;
 }
 
-/* line 325, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 345, /Users/jeremy/Desktop/access/css/style.scss */
 .bio-last {
   width: 22.85714%;
   float: right;
 }
 
-/* line 328, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 348, /Users/jeremy/Desktop/access/css/style.scss */
 .group-photo {
   width: 100%;
   float: left;
 }
 
-/* line 331, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 351, /Users/jeremy/Desktop/access/css/style.scss */
 .group-photo-img {
   margin-left: auto;
   margin-right: auto;
   width: 300px;
 }
 
-/* line 336, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 356, /Users/jeremy/Desktop/access/css/style.scss */
 .round img {
   width: 400px;
 }
 
-/* line 340, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 360, /Users/jeremy/Desktop/access/css/style.scss */
 .round {
   display: inline-block;
   position: relative;
@@ -454,7 +475,7 @@ nav ul li a:hover {
   margin: 1.2em;
 }
 
-/* line 354, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 374, /Users/jeremy/Desktop/access/css/style.scss */
 .footer {
   margin: 2em 0 2em 0;
   max-width: 60em;
@@ -468,7 +489,7 @@ nav ul li a:hover {
   clear: both;
 }
 
-/* line 359, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 379, /Users/jeremy/Desktop/access/css/style.scss */
 .footer-location {
   width: 22.85714%;
   float: left;
@@ -476,14 +497,14 @@ nav ul li a:hover {
   font-size: .6em;
 }
 
-/* line 364, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 384, /Users/jeremy/Desktop/access/css/style.scss */
 .footer-location-last {
   width: 22.85714%;
   float: right;
   font-size: .6em;
 }
 
-/* line 368, /Users/jeremy/Desktop/access/css/style.scss */
+/* line 388, /Users/jeremy/Desktop/access/css/style.scss */
 .footer-location-last h6, .footer-location h6 {
   margin-bottom: .5em;
 }
