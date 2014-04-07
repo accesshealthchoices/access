@@ -1,5 +1,14 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
 @import "susy";
-//The banner is from Pure CSS Layouts
+@import "breakpoint";
+@import "normalize";
+@import "typeplate";
+@import "layout";
 
 $nav-bg-color: #fff;
 $contact-bg-color: #fff;
@@ -9,7 +18,7 @@ $body-width: 60em;
 $main-page-bg-color: #fff;
 $pricing-table-head-bg-color: #ccc;
 $pricing-header-color-one: #00748e;
-$pricing-header-color-two: #e3753c;
+$pricing-header-color-two: #e3753e;
 $main-link-color: $pricing-header-color-two;
 
 @import url(http://weloveiconfonts.com/api/?family=fontelico);
@@ -18,9 +27,6 @@ $main-link-color: $pricing-header-color-two;
 [class*="fontelico-"]:before {
   font-family: 'fontelico', sans-serif;
 }
-
-
-
 
 $susy: (
   container: auto,
@@ -183,9 +189,6 @@ p.maps-para{
   height: 4em;
 }
 
-.form .form-data form {
-}
-
 .form .form-data fieldset {
   border: none;
   padding: 0;
@@ -227,8 +230,6 @@ p.maps-para{
   @include container($body-width);
 }
 
-.contact-info{
-}
 .location{
   @include span(6);
 }
@@ -429,6 +430,7 @@ p.maps-para{
 .footer-links {
   font-size: .8em;
 }
+
 
 
 
