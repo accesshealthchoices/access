@@ -5,8 +5,13 @@
   <title>{{ page.title }}</title>
   <link rel="stylesheet" href="/css/screen.css">
   <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  {% include navigation.html %}
+  {{ content }}
+  {% include footer.html %}
 
-	<script type="text/javascript"
+  <script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLXuuLqKySehLZ4vv-eJyST8mvUYY8060&sensor=true">
 	</script>
 	<script type="text/javascript">
@@ -66,9 +71,9 @@
 			    map: map, // assign the market to our map variable
 			});
 			map.mapTypes.set('map_style', styledMap);
-  			map.setMapTypeId('map_style');
+				map.setMapTypeId('map_style');
 
-  			var infowindow = new google.maps.InfoWindow({ // Create a new InfoWindow
+				var infowindow = new google.maps.InfoWindow({ // Create a new InfoWindow
 	  			content:'' +
 	  				'<h6 class="maps-header">Valley Location</h6>' +
 	  				'<p class="maps-para">12121 E Broadway Spokane, Wa 99206<br>' +
@@ -96,10 +101,5 @@
 
 		google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
-</head>
-<body>
-  {% include navigation.html %}
-  {{ content }}
-  {% include footer.html %}
 </body>
 </html>
