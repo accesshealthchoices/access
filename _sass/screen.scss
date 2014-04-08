@@ -198,8 +198,9 @@ p.maps-para{
 
 .form input {
   @include span(12);
-  padding: .5em 0 .5em 0;
+  padding: 1em 0 1em 0;
   border: 1px solid #ccc;
+  margin-bottom: 1em;
 }
 
 .form-textarea textarea {
@@ -315,10 +316,11 @@ p.maps-para{
 
 .button-choose {
   @include span(12);
-  padding: .8em;
+  padding: 1em;
   background: $nav-link-hover-color;
   border: 1px solid #ccc;
   color: #222;
+  font-size: 1em;
 }
 
 .button-choose:hover {

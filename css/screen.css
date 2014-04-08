@@ -366,10 +366,10 @@ nav a:link,
 nav a:hover,
 nav a:visited,
 nav a:active {
-  color: #e3753e; }
+  color: #e3753c; }
 
 .maps-link {
-  color: #e3753e;
+  color: #e3753c;
   text-decoration: none; }
 
 .navigation {
@@ -508,8 +508,9 @@ p.maps-para {
 .form input {
   width: 100%;
   float: left;
-  padding: .5em 0 .5em 0;
-  border: 1px solid #ccc; }
+  padding: 1em 0 1em 0;
+  border: 1px solid #ccc;
+  margin-bottom: 1em; }
 
 .form-textarea textarea {
   width: 100%;
@@ -597,7 +598,7 @@ p.maps-para {
   background: #00748e; }
 
 .pricing-header-color-two {
-  background: #e3753e; }
+  background: #e3753c; }
 
 .pricing-table-header h3 {
   margin: 0;
@@ -630,10 +631,11 @@ p.maps-para {
 .button-choose {
   width: 100%;
   float: left;
-  padding: .8em;
+  padding: 1em;
   background: #efefef;
   border: 1px solid #ccc;
-  color: #222; }
+  color: #222;
+  font-size: 1em; }
 
 .button-choose:hover {
   background: #dedede; }
