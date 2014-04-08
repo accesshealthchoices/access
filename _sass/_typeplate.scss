@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! 
 TYPEPLATE
 URL ........... http://typeplate.com
@@ -8,26 +7,396 @@ AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
 LICENSE ....... Creative Commmons Attribution 3.0 (http://creativecommons.org/licenses/by/3.0)
 LICENSE URL ... https://github.com/typeplate/bower/blob/master/license.txt
 */
+
+
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+//
+// $Variables
+//
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+
+
+// $Variable $BaseType
+// -------------------------------------//
+//the serif boolean var can be redeclared from another stylesheet. However
+//the var must be placed after your @import "typeplate.scss";
+$serif-boolean: true !default;
+
+$font-family: if($serif-boolean, serif, sans-serif) !default; // Non-font-face font-stack
+
+$font-weight: normal !default;
+$line-height: 1.65 !default;
+$font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
+$custom-font-family: false !default; // Custom font-face stack, if set will be added to the $base-font-family
+$measure: $font-base * $line-height;
+
+
+// $Variable $Paragraphs
+// -------------------------------------//
+
+// Text Indentation Value
+$indent-val: 1.5em !default;
+
+// Paragraph Styling Boolean
+// 'false' means no vertical whitespace
+// between subsequent paragraphs.
+$paragraph-vertical-whitespace: false !default;
+
+
+// $Variable $Small-Print
+// -------------------------------------//
+
+$small-print-size: 65% !default;
+
+
+// $Variable $Base-Color
+// -------------------------------------//
+
+$body-copy-color: #444 !default;
+$heading-color: #222 !default;
+
+
+// $Variable $Ampersand
+// -------------------------------------//
+
+$amp-fontface-name: Ampersand !default;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
+$amp-fontface-fallback: local('Georgia') !default;
+
+// Allows for our ampersand element to have differing
+// font-family from the ampersand unicode font-family.
+$amp-font-family: Verdana, sans-serif !default;
+
+
+// $Variable $Icon-Font-Helper
+// -------------------------------------//
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+$icon-fonts: null !default;
+
+
+// $Variable $Typescale
+// -------------------------------------//
+
+$tera: 117 !default; // 117 = 18 × 6.5
+$giga: 90 !default; // 90 = 18 × 5
+$mega: 72 !default; // 72 = 18 × 4
+$alpha: 60 !default; // 60 = 18 × 3.3333
+$beta: 48 !default; // 48 = 18 × 2.6667
+$gamma: 36 !default; // 36 = 18 × 2
+$delta: 24 !default; // 24 = 18 × 1.3333
+$epsilon: 21 !default; // 21 = 18 × 1.1667
+$zeta: 18 !default; // 18 = 18 × 1
+
+
+// $Variable $Typescale-Unit
+// -------------------------------------//
+
+$type-scale-unit-value: rem !default;
+
+
+// $Variable $Pull-Quotes
+// -------------------------------------//
+
+$pull-quote-fontsize: 4em !default;
+$pull-quote-opacity: 0.5 !default;
+$pull-quote-color: #dc976e !default;
+
+
+// $Variable $Citation
+// -------------------------------------//
+
+$cite-display: block !default;
+$cite-text-align: right !default;
+$cite-font-size: inherit !default;
+
+
+// $Variable $Small-Caps
+// -------------------------------------//
+
+$small-caps-color: gray !default;
+$small-caps-weight: 600 !default;
+
+
+// $Variable $DropCap
+// -------------------------------------//
+
+$dropcap-float-position: left !default;
+$dropcap-font-size: 4em !default;
+$dropcap-font-family: inherit !default;
+$dropcap-txt-indent: 0 !default;
+$dropcap-margin: inherit !default;
+$dropcap-padding: inherit !default;
+$dropcap-color: inherit !default;
+$dropcap-line-height: 1 !default;
+$dropcap-bg: transparent !default;
+
+
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+//
+// $Fontfaces
+//
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+
+
+// $Fontface $Unicode-Range-Ampersand
+// -------------------------------------//
+
 @font-face {
-  font-family: "Ampersand";
-  src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
-  unicode-range: U+0026;
-}
-@font-face {
-  font-family: "Ampersand";
-  src: local("Georgia");
-  unicode-range: U+270C;
-}
-/* line 385, /Users/jeremy/Desktop/access/css/typeplate.scss */
-body {
-  word-wrap: break-word;
+	font-family: '#{$amp-fontface-name}';
+	src: $amp-fontface-source;
+	unicode-range: U+0026;
 }
 
-/* line 389, /Users/jeremy/Desktop/access/css/typeplate.scss */
-pre code {
-  word-wrap: normal;
+// Ampersand fallback font for unicode range
+@font-face {
+	font-family: '#{$amp-fontface-name}';
+	src: $amp-fontface-fallback;
+	unicode-range: U+270C;
 }
 
+
+// $Fontface $Icon-Font-Helper
+// -------------------------------------//
+// ICON FONT HELPER
+// In order to use this hot rod you must have the following…
+// 1. Compass.
+// 2. Create a 'fonts' directory in the root of your project.
+// 3. Specify within your 'config.rb' file the following line…
+//
+// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
+//
+// Example usage:
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+//
+// Additional Notes:
+// @include font-face() is a Compass helper function
+// based on this gist by Chris Van Patten
+// https://gist.github.com/4469518
+
+@if ($icon-fonts != null) {
+	@each $font in $icon-fonts {
+		@include font-face( $font,
+			font-files(
+				'#{$font}/#{$font}.woff',
+				'#{$font}/#{$font}.ttf',
+				'#{$font}/#{$font}.svg', svg
+			),
+			'#{$font}/#{$font}.eot'
+			)
+	}
+}
+
+
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+//
+// $Functions
+//
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+
+
+// $Function $Context Calculator
+// -------------------------------------//
+// divide a given font-size by base font-size & return a relative value
+
+@function context-calc($scale, $base, $value) {
+	@return ($scale/$base)#{$value};
+}
+
+
+// $Function $Measure-Margin
+// -------------------------------------//
+// divide 1 unit of measure by given font-size & return a relative em value
+
+@function measure-margin($scale, $measure, $value) {
+	@return ($measure/$scale)#{$value};
+}
+
+
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+//
+// $Mixins / $Placeholders
+//
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+
+
+// $Mixin $Type-Scale
+// -------------------------------------//
+
+@mixin type-scale($scale, $base, $value, $measure:"") {
+
+	@if $value == rem {
+
+		font-size: $scale#{px};
+	}
+
+	font-size: context-calc($scale, $base, $value);
+
+	@if $measure != "" {
+
+		@if $value == rem {
+			margin-bottom: measure-margin($scale, $measure, $value: px);
+		}
+
+		margin-bottom: measure-margin($scale, $measure, $value);
+	}
+}
+
+
+// $Mixin $Hypens
+// -------------------------------------//
+//http://trentwalton.com/2011/09/07/css-hyphenation
+
+@mixin css-hyphens($val) {
+	// Accepted values: [ none | manual | auto ]
+	-webkit-hyphens: $val; // Safari 5.1 thru 6, iOS 4.2 thru 6
+	-moz-hyphens: $val; // Firefox 16 thru 20
+	-ms-hyphens: $val; // IE10
+	-o-hyphens: $val; // PRESTO...haha LOL
+	hyphens: $val; // W3C standard
+}
+
+
+// $Mixin $Smallcaps
+// -------------------------------------//
+// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+// ISSUE #1 : https://github.com/typeplate/typeplate.github.com/issues/1
+
+@mixin smallcaps($color, $font-weight) {
+	// depends on the font family.
+	// some font-families don't support small caps
+	// or don't provide them with their web font.
+	font-variant: small-caps;
+	font-weight: $font-weight;
+	text-transform: lowercase;
+	color: $color;
+}
+
+
+// $Mixin $Fontsize-Adjust
+// -------------------------------------//
+// correct x-height for fallback fonts: requires secret formula
+// yet to be discovered. This is still wacky for support. Use
+// wisely grasshopper.
+
+@mixin font-size-adjust($adjust-value) {
+	// firefox 17+ only (as of Feb. 2013)
+	font-size-adjust: $adjust-value;
+}
+
+
+// $Mixin $Ampersand
+// -------------------------------------//
+
+@mixin ampersand($amp-font-family...) {
+	font-family: $amp-font-family;
+}
+
+%ampersand-placeholder {
+	@include ampersand($amp-fontface-name, $amp-font-family);
+}
+
+// Call your ampersand on any element you wish from another stylesheet
+// using this Sass extend we've provided. For exmaple:
+//
+// <h6 class="ampersand">Dewey Cheat 'em & Howe</h6>
+//
+// .ampersand { @extend %ampersand-placeholder; }
+
+
+// $Mixin $Blockquote
+// -------------------------------------//
+// https://github.com/typeplate/typeplate.github.io/issues/95
+//
+// Use our pre-defined markup and add a class
+// to your custom blockquote element.
+// For example:
+//
+// .blockquote { @include blockquote("-"); }
+//
+// "-" is your citation flourish. For example:
+//
+// I always say important things because I'm so smart
+//                           - Super Important Person
+
+// Citation Mixin for Custom Styling
+@mixin cite-style($display, $text-align, $font-size) {
+	display: $display;
+	font-size: $font-size;
+	text-align: $text-align;
+}
+
+%cite {
+	@include cite-style($cite-display, $cite-text-align, $cite-font-size);
+}
+
+@mixin blockquote($citation-flourish) {
+	p {
+		&:last-of-type {
+			margin-bottom: -#{$line-height/2}em;
+		}
+	}
+	+ figcaption {
+		@extend %cite;
+		&:before {
+			content: $citation-flourish;
+		}
+	}
+}
+
+
+// $Mixin $Pull-Quotes
+// -------------------------------------//
+
+@mixin pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color) {
+	position: relative;
+	padding: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
+	&:before,
+	&:after {
+		height: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
+		opacity: $pull-quote-opacity;
+		position: absolute;
+		font-size: $pull-quote-fontsize;
+		color: $pull-quote-color;
+	}
+	&:before {
+		content: '“';
+		top:  0;
+		left: 0;
+	}
+	&:after {
+		content: '”';
+		bottom: 0;
+		right: 0;
+	}
+}
+
+
+// $Placeholder $Wordwrap
+// -------------------------------------//
+// Silent Sass Classes - A.K.A Placeholders
+//
+// normal: Indicates that lines may only break at normal word break points.
+// break-word : Indicates that normally unbreakable words may be broken at
+// arbitrary points if there are no otherwise acceptable break points in the line.
+
+%breakword {
+	word-wrap: break-word;
+}
+
+%normal-wrap {
+	word-wrap: normal;
+}
+
+%inherit-wrap {
+	word-wrap: auto;
+}
+
+
+// $Mixin $Dropcaps
+// -------------------------------------//
 /**
  * Dropcap Sass @include
  * Use the following Sass @include with any selector you feel necessary.
@@ -37,116 +406,227 @@ pre code {
  * Extend this object into your custom stylesheet. Let the variables do the work.
  *
  */
-/* line 514, /Users/jeremy/Desktop/access/css/typeplate.scss */
+
+// Use @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
+// to pass the following arguments below. Feel free to pass in custom
+// values for the variables we've provided.
+//
+// Make sure you add the class “drop-cap” to your markup in order to operate.
+@mixin dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg) {
+	&:first-letter {
+		float: $dropcap-float-position;
+		margin: $dropcap-margin;
+		padding: $dropcap-padding;
+		font-size: $dropcap-font-size;
+		font-family: $dropcap-font-family;
+		line-height: $dropcap-line-height;
+		text-indent: $dropcap-txt-indent;
+		background: $dropcap-bg;
+		color: $dropcap-color;
+	}
+}
+
+
+// $Mixin $Codeblocks
+// -------------------------------------//
+
+@mixin white-space($wrap-space) {
+	@if $wrap-space == 'pre-wrap' {
+		white-space: #{-moz-}$wrap-space; // Firefox 1.0-2.0
+		white-space: $wrap-space;       // current browsers
+	} @else {
+		white-space: $wrap-space;
+	}
+}
+
+
+// $Mixin $Definition-Lists
+// -------------------------------------//
+// lining
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+//
+// dictionary-style
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+
+@mixin definition-list-style($style) {
+	// lining style
+	@if $style == lining {
+		dt,
+		dd {
+			display: inline;
+			margin: 0;
+		}
+		dt,
+		dd {
+			& + dt {
+				&:before {
+					content: "\A";
+					white-space: pre;
+				}
+			}
+		}
+		dd {
+			& + dd {
+				&:before {
+					content: ", ";
+				}
+			}
+			&:before {
+					content: ": ";
+					margin-left: -0.2rem; //removes extra space between the dt and the colon
+			}
+		}
+	}
+	// dictionary-style
+	@if $style == dictionary-style {
+		dt {
+			display: inline;
+			counter-reset: definitions;
+			& + dt {
+				&:before {
+					content: ", ";
+					margin-left: -0.2rem; // removes extra space between the dt and the comma
+				}
+			}
+		}
+		dd {
+			display: block;
+			counter-increment: definitions;
+			&:before {
+				content: counter(definitions, decimal) ". ";
+			}
+		}
+	}
+}
+
+
+
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+//
+// $Typeplate Styles
+//
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+
+
+// $Styles $Globals
+// -------------------------------------//
+
 html {
-  font: normal 112.5%/1.65 serif;
+	@if $custom-font-family {
+		font: $font-weight #{$font-size}%/#{$line-height} $custom-font-family, $font-family;
+	} @else {
+		font: $font-weight #{$font-size}%/#{$line-height} $font-family;
+	}
 }
 
-/* line 522, /Users/jeremy/Desktop/access/css/typeplate.scss */
 body {
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
-  color: #444444;
+	// Ala Trent Walton
+	@include css-hyphens(auto);
+
+	// normal: Indicates that lines may only break at normal word break points.
+	// break-word : Indicates that normally unbreakable words may be broken at ...
+	// arbitrary points if there are no otherwise acceptable break points in the line.
+	@extend %breakword;
+	color: $body-copy-color;
 }
 
-/* line 533, /Users/jeremy/Desktop/access/css/typeplate.scss */
 small {
-  font-size: 65%;
+	font-size: $small-print-size;
 }
 
-/* line 557, /Users/jeremy/Desktop/access/css/typeplate.scss */
-h1, h2, h3, h4, h5, h6 {
-  text-rendering: optimizeLegibility;
-  line-height: 1;
-  margin-top: 0;
+
+// $Styles $Headings
+// -------------------------------------//
+
+// Extend included classes on any element of your
+// choosing for adjusting type based on the scale
+// provided.
+// Special Props to Harry Roberts for this trick.
+
+// For example:
+
+// <h6 class="giga">Awesome Headline</h6>
+// <p class="tera">a story about a dude</p>
+
+// Our Type Scale is as follows with px fallbacks
+// for IE 6-8 as they do not understand REM units.
+//
+// 18, 21, 24, 36, 48, 60, 72, 90, 117
+
+// styles for all headings, in the style of @csswizardry
+%hN {
+	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+	line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
+	margin-top: 0;
 }
 
-/* line 572, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.tera {
-  font-size: 117px;
-  font-size: 6.5rem;
-  margin-bottom: 0.25385px;
-  margin-bottom: 0.25385rem;
+// Multi-dimensional array, where:
+// the first value is the name of the class
+// and the second value is the variable for the size
+$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
+
+// Sass loop to associate h1-h6 tags with their appropriate greek
+// heading based on a modular scale.
+// for each size in the scale, create a class
+@each $size in $sizes {
+	.#{nth($size, 1)} {
+		@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+	}
 }
 
-/* line 572, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.giga {
-  font-size: 90px;
-  font-size: 5rem;
-  margin-bottom: 0.33px;
-  margin-bottom: 0.33rem;
+// associate h1-h6 tags with their appropriate greek heading
+h1 {
+	@extend .alpha;
+	@extend %hN;
 }
 
-/* line 572, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.mega {
-  font-size: 72px;
-  font-size: 4rem;
-  margin-bottom: 0.4125px;
-  margin-bottom: 0.4125rem;
+h2 {
+	@extend .beta;
+	@extend %hN;
 }
 
-/* line 572, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.alpha, h1 {
-  font-size: 60px;
-  font-size: 3.33333rem;
-  margin-bottom: 0.495px;
-  margin-bottom: 0.495rem;
+h3 {
+	@extend .gamma;
+	@extend %hN;
 }
 
-/* line 572, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.beta, h2 {
-  font-size: 48px;
-  font-size: 2.66667rem;
-  margin-bottom: 0.61875px;
-  margin-bottom: 0.61875rem;
+h4 {
+	@extend .delta;
+	@extend %hN;
 }
 
-/* line 572, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.gamma, h3 {
-  font-size: 36px;
-  font-size: 2rem;
-  margin-bottom: 0.825px;
-  margin-bottom: 0.825rem;
+h5 {
+	@extend .epsilon;
+	@extend %hN;
 }
 
-/* line 572, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.delta, h4 {
-  font-size: 24px;
-  font-size: 1.33333rem;
-  margin-bottom: 1.2375px;
-  margin-bottom: 1.2375rem;
+h6 {
+	@extend .zeta;
+	@extend %hN;
 }
 
-/* line 572, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.epsilon, h5 {
-  font-size: 21px;
-  font-size: 1.16667rem;
-  margin-bottom: 1.41429px;
-  margin-bottom: 1.41429rem;
-}
 
-/* line 572, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.zeta, h6 {
-  font-size: 18px;
-  font-size: 1rem;
-  margin-bottom: 1.65px;
-  margin-bottom: 1.65rem;
-}
+// $Styles $Parargraphs
+// -------------------------------------//
 
-/* line 612, /Users/jeremy/Desktop/access/css/typeplate.scss */
 p {
-  margin: auto auto 1.5em;
-}
-/* line 617, /Users/jeremy/Desktop/access/css/typeplate.scss */
-p + p {
-  text-indent: 1.5em;
-  margin-top: -1.5em;
+	margin: auto auto $indent-val;
+
+	// Conditonal Check For Paragraph Styling
+	@if $paragraph-vertical-whitespace == false {
+		& + p {
+			//siblings indentation
+			text-indent: $indent-val;
+			margin-top: -$indent-val;
+		}
+	}
 }
 
-/* line 630, /Users/jeremy/Desktop/access/css/typeplate.scss */
+
+// $Styles $Hyphenation
+// -------------------------------------//
+// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+
 abbr,
 acronym,
 blockquote,
@@ -160,30 +640,30 @@ samp,
 tt,
 var,
 xmp {
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  -o-hyphens: none;
-  hyphens: none;
+	@include css-hyphens(none);
 }
 
-/* line 650, /Users/jeremy/Desktop/access/css/typeplate.scss */
+
+// $Styles $Codeblocks
+// -------------------------------------//
+
 pre code {
-  white-space: -moz-pre-wrap;
-  white-space: pre-wrap;
+	@extend %normal-wrap;
+	@include white-space(pre-wrap);
 }
 
-/* line 655, /Users/jeremy/Desktop/access/css/typeplate.scss */
 pre {
-  white-space: pre;
+	@include white-space(pre);
 }
 
-/* line 659, /Users/jeremy/Desktop/access/css/typeplate.scss */
 code {
-  white-space: pre;
-  font-family: monospace;
+	@include white-space(pre);
+	font-family: monospace;
 }
 
+
+// $Styles $Smallcaps
+// -------------------------------------//
 /**
  * Abbreviations Markup
  *
@@ -192,47 +672,44 @@ code {
  * Extend this object into your markup.
  *
  */
-/* line 675, /Users/jeremy/Desktop/access/css/typeplate.scss */
 abbr {
-  font-variant: small-caps;
-  font-weight: 600;
-  text-transform: lowercase;
-  color: gray;
-}
-/* line 677, /Users/jeremy/Desktop/access/css/typeplate.scss */
-abbr[title]:hover {
-  cursor: help;
+	@include smallcaps($small-caps-color, $small-caps-weight);
+	&[title]:hover {
+		cursor: help;
+	}
 }
 
-/* line 686, /Users/jeremy/Desktop/access/css/typeplate.scss */
+
+// $Styles $Headings-Color
+// -------------------------------------//
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: #222222;
+	color: $heading-color;
 }
 
-/* line 701, /Users/jeremy/Desktop/access/css/typeplate.scss */
+
+// $Styles $Dropcap
+// -------------------------------------//
+
+// Combats our sibling paragraphs syling and indentation
+// As not to ruin our beautiful drop caps.
 p + .drop-cap {
-  text-indent: 0;
-  margin-top: 0;
+	text-indent: 0;
+	margin-top: 0;
 }
 
-/* line 416, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.drop-cap:first-letter {
-  float: left;
-  margin: inherit;
-  padding: inherit;
-  font-size: 4em;
-  font-family: inherit;
-  line-height: 1;
-  text-indent: 0;
-  background: transparent;
-  color: inherit;
+.drop-cap {
+	@include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
 }
 
+
+// $Styles $Definition-Lists
+// -------------------------------------//
 /**
  * Lining Definition Style Markup
  *
@@ -244,26 +721,8 @@ p + .drop-cap {
  * Extend this object into your markup.
  *
  */
-/* line 454, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.lining dt,
-.lining dd {
-  display: inline;
-  margin: 0;
-}
-/* line 462, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.lining dt + dt:before,
-.lining dd + dt:before {
-  content: "\A";
-  white-space: pre;
-}
-/* line 470, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.lining dd + dd:before {
-  content: ", ";
-}
-/* line 474, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.lining dd:before {
-  content: ": ";
-  margin-left: -0.2rem;
+.lining {
+	@include definition-list-style(lining);
 }
 
 /**
@@ -277,26 +736,13 @@ p + .drop-cap {
  * Extend this object into your markup.
  *
  */
-/* line 482, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.dictionary-style dt {
-  display: inline;
-  counter-reset: definitions;
-}
-/* line 486, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.dictionary-style dt + dt:before {
-  content: ", ";
-  margin-left: -0.2rem;
-}
-/* line 492, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.dictionary-style dd {
-  display: block;
-  counter-increment: definitions;
-}
-/* line 495, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.dictionary-style dd:before {
-  content: counter(definitions,decimal) ". ";
+.dictionary-style {
+	@include definition-list-style(dictionary-style);
 }
 
+
+// $Styles $Blockquote-Markup
+// -------------------------------------//
 /**
  * Blockquote Markup
  *
@@ -314,6 +760,15 @@ p + .drop-cap {
  * Extend this object into your markup.
  *
  */
+
+
+// $Styles $Pull-Quotes
+// -------------------------------------//
+// http://24ways.org/2005/swooshy-curly-quotes-without-images
+//
+// http://todomvc.com - Thanks sindresorhus!
+// https://github.com/typeplate/typeplate.github.io/issues/49
+
 /**
  * Pull Quotes Markup
  *
@@ -326,32 +781,14 @@ p + .drop-cap {
  * Extend this object into your custom stylesheet.
  *
  */
-/* line 785, /Users/jeremy/Desktop/access/css/typeplate.scss */
+
 .pull-quote {
-  position: relative;
-  padding: 1em;
-}
-/* line 356, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.pull-quote:before, .pull-quote:after {
-  height: 1em;
-  opacity: 0.5;
-  position: absolute;
-  font-size: 4em;
-  color: #dc976e;
-}
-/* line 364, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.pull-quote:before {
-  content: '“';
-  top: 0;
-  left: 0;
-}
-/* line 369, /Users/jeremy/Desktop/access/css/typeplate.scss */
-.pull-quote:after {
-  content: '”';
-  bottom: 0;
-  right: 0;
+	 @include pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color);
 }
 
+
+// $Styles $Figures
+// -------------------------------------//
 /**
  * Figures Markup
  *
@@ -364,6 +801,10 @@ p + .drop-cap {
  * Extend this object into your markup.
  *
  */
+
+
+// $Styles $Footnotes
+// -------------------------------------//
 /**
  * Footnote Markup : Replace 'X' with your unique number for each footnote
  *
